@@ -9,7 +9,7 @@ if (isset($_POST['Submit'])) {
 
     mysqli_query(
         $conn,
-        "INSERT INTO belajar (name, email, phone) 
+        "INSERT INTO Belajar (name, email, phone) 
          VALUES ('$name', '$email', '$mobile')"
     );
 
@@ -61,6 +61,7 @@ $id = 1;
         <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
+        <th>Action</th>
     </tr>
 
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
@@ -69,6 +70,7 @@ $id = 1;
             <td><?= $row['name']; ?></td>
             <td><?= $row['email']; ?></td>
             <td><?= $row['phone']; ?></td>
+            <td><a href="delete.php?id=<?= $row['id']; ?>">Hapus</a></td>
         </tr>
     <?php } ?>
 </table>
