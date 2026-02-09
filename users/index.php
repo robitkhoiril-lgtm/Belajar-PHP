@@ -70,7 +70,13 @@ $id = 1;
             <td><?= $row['name']; ?></td>
             <td><?= $row['email']; ?></td>
             <td><?= $row['phone']; ?></td>
-            <td><a href="delete.php?id=<?= $row['id']; ?>">Hapus</a></td>
+            <td>
+                <a href="edit.php?id=<?= $row['id']; ?>">Edit</a> |
+                <a href="delete.php?id=<?= $row['id']; ?>" 
+                onclick="return confirm('Yakin mau hapus?')">
+                Hapus
+                </a>
+            </td>
         </tr>
     <?php } ?>
 </table>
